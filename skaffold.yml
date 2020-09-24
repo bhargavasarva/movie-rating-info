@@ -1,0 +1,13 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: movie-rating-info
+      docker:
+        dockerfile: Dockerfile
+  local: {}
+deploy:
+  kubectl:
+    manifests:
+      - service.yml
+      - deploy.yml
